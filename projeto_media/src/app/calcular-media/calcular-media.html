@@ -1,0 +1,28 @@
+<section>
+    <form>
+        <div>
+            <h2>Calculadora Média Parcial</h2>
+
+            <label for="nota_b1">Nota 1° bimestre:</label>
+            <input type="number" id="nota_b1" name="notaB1" [(ngModel)]="notaB1" min="0" max="100" placeholder="Digite sua nota do 1° bimestre">
+
+            <label for="nota_b2">Nota 2° bimestre:</label>
+            <input type="number" id="nota_b2" name="notaB2" [(ngModel)]="notaB2" min="0" max="100" placeholder="Digite sua nota do 2° bimestre">
+        </div>
+        <div>
+            <button type="button" (click)="calcularMedia()">Calcular Média</button>
+        </div>
+    </form>
+
+    @if (erro) {
+        <p>{{ erro }}</p>
+    }
+    
+    @if (media !== null) {
+        <div>
+            <p><strong>Média:</strong>{{ media }}</p>
+            <p><strong>Situação:</strong>{{ situacao }}</p>
+        </div>
+    }
+</section>
+
